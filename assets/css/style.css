@@ -1,0 +1,180 @@
+@import url("https://fonts.googleapis.com/css?family=Exo:400,700");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Exo", sans-serif;
+}
+
+::-webkit-scrollbar {
+  width: 0.8rem;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #d3f4eb;
+  border-radius: 30px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #343232;
+  border-radius: 30px;
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #eee;
+  overflow: auto;
+  cursor: default;
+}
+
+.Home {
+  position: relative;
+  background-image: radial-gradient(
+    farthest-corner at 40px 40px,
+    #72e778 60%,
+    #62ec69de 100%
+  );
+  min-height: calc(100vh - 60px);
+  padding: 1rem;
+  margin: 1rem;
+  border-radius: 20px;
+  color: #343232;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+.Home > h2 {
+  display: flex;
+  justify-content: center;
+  font-size: 2rem;
+  margin: 1rem 0;
+  margin-bottom: 2rem;
+}
+.Home .pizza-escolhida {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+}
+.Home .pizza-escolhida #pizza-id-escolhida {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+.Home .pizza-escolhida #pizza-id-escolhida #idPizza {
+  padding: 0.5rem;
+  width: 315px;
+  border: none;
+  border-radius: 0.2rem;
+  font-size: 1rem;
+}
+.Home .pizza-escolhida #pizza-id-escolhida #idPizzaBtn {
+  background-color: transparent;
+  border: 3px solid #343232;
+  padding: 0.5rem;
+  outline: none;
+  color: #343232;
+  font-weight: bold;
+  border-radius: 0.8rem;
+  width: 330px;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.6s ease-in-out;
+}
+.Home .pizza-escolhida #pizza-id-escolhida #idPizzaBtn:hover {
+  background-color: #343232;
+  color: #d3f4eb;
+}
+.Home__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+}
+@media (max-width: 350px) {
+  .Home__container {
+    justify-content: unset;
+  }
+}
+.Home__container .pizzaLista {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 25px 70px;
+}
+@media (max-width: 1220px) {
+  .Home__container .pizzaLista {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 840px) {
+  .Home__container .pizzaLista {
+    grid-template-columns: 1fr;
+  }
+}
+.Home .pizzaCardItem,
+.Home .PizzaListaItem {
+  background-color: #52f8c3;
+  border-radius: 10px;
+  padding: 0.8rem;
+  width: 345px;
+  display: flex;
+  justify-content: space-between;
+}
+@media (max-width: 400px) {
+  .Home .pizzaCardItem,
+  .Home .PizzaListaItem {
+    width: 65vw;
+    height: auto;
+  }
+}
+.Home .pizzaCardItem > div,
+.Home .PizzaListaItem > div {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+.Home .pizzaCardItem__numero,
+.Home .PizzaListaItem__numero {
+  font-size: 1.2rem;
+  margin-left: 5px;
+}
+.Home .pizzaCardItem__sabor,
+.Home .PizzaListaItem__sabor {
+  font-size: 1.5rem;
+  font-weight: bold;
+  line-height: 100%;
+}
+.Home .pizzaCardItem__preco,
+.Home .PizzaListaItem__preco {
+  color: #4d754d;
+  text-align: center;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+.Home .pizzaCardItem__descricao,
+.Home .PizzaListaItem__descricao {
+  font-size: 0.8rem;
+}
+.Home .pizzaCardItem__avaliacao,
+.Home .PizzaListaItem__avaliacao {
+  font-size: 1rem;
+  margin-top: 0.5rem;
+}
+.Home .pizzaCardItem__foto,
+.Home .PizzaListaItem__foto {
+  height: 150px;
+  margin-right: -50px;
+  transition: all 0.6s ease-in-out;
+}
+.Home .pizzaCardItem__foto:hover,
+.Home .PizzaListaItem__foto:hover {
+  transform: scale(1.2);
+}
+.Home .pizzaCardItem {
+  margin: 1rem 0;
+  height: auto;
+}
+
+/*# sourceMappingURL=style.css.map */
