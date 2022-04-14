@@ -5,3 +5,14 @@
   flex-direction: column;
   align-items: center;
 }
+
+@mixin display-div {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+@mixin  display-row {
+  display: flex;
+  justify-content: space-between;
+}

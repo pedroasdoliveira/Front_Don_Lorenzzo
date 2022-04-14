@@ -5,10 +5,35 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./assets/css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css"
+    />
     <title>Don Lorenzzo</title>
   </head>
   <body>
     <section class="Home">
+      <div class="Header">
+        <div class="Header_row">
+          <div class="Logo">
+            <img
+              class="Logo__icone"
+              src="./assets/image/logo_pizzaria.png"
+              width="15%"
+              alt="logo_pizzaria"
+            />
+            <span class="Logo__titulo">𝔇𝔬𝔫 𝔏𝔬𝔯𝔢𝔫𝔷𝔷𝔬</span>
+          </div>
+
+          <div class="Opcoes">
+            <div class="Opcoes__sacola">
+              <i class="bi bi-cart"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!--------------------------------------------------------- Procurar -------------------------------------------------->
       <h2>Procurar Pizza:</h2>
       <div class="pizza-escolhida">
         <div id="pizza-id-escolhida">
@@ -22,6 +47,7 @@
         <div id="pizzaEscolhida"></div>
       </div>
 
+      <!--------------------------------------------------------- Catalogo -------------------------------------------------->
       <h2>Pizzas Disponíveis:</h2>
       <div class="Home__container">
         <div class="pizzaLista" id="pizzaList"></div>

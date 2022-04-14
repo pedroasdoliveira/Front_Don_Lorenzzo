@@ -32,6 +32,11 @@ async function findByIdPizza() {
 
     const divPizzaEscolhida = document.querySelector('#pizzaEscolhida');
 
+    if (pizza.id == undefined) {
+        alert('Pizza não encontrada!');
+        return;
+    }
+
     divPizzaEscolhida.innerHTML =
         `
     <div class="pizzaCardItem">

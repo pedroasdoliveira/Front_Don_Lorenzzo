@@ -35,25 +35,106 @@ body {
   position: relative;
   background-image: radial-gradient(
     farthest-corner at 40px 40px,
-    #72e778 60%,
+    var.$background-color-home 40%,
     #62ec69de 100%
   );
   min-height: calc(100vh - 60px);
   padding: 1rem;
   margin: 1rem;
   border-radius: 20px;
-  color: #343232;
+  color: var.$primary-color;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+
+  // ----------------------------------------------- Header --------------------------------------
+  .Header {
+    max-width: 1120px;
+    margin: 0 auto;
+    position: relative;
+
+    &_row {
+      @include mixins.display-row;
+      width: 100%;
+      margin: 20px 30px;
+
+      .Logo {
+        display: flex;
+        align-items: center;
+        border-radius: 15px;
+        background-color: var.$color-Logo;
+        width: 375px;
+        height: 50px;
+
+        &__icone {
+          position: absolute;
+          left: -20px;
+          top: -35px;
+          transition: var.$transtition;
+
+          &:hover {
+            transform: scale(1.1);
+          }
+        }
+
+        &__titulo {
+          position: absolute;
+          left: 130px;
+          font-weight: bold;
+          font-size: 2.5rem;
+          transition: var.$transtition;
+
+          &:hover {
+            transform: scale(1.1);
+          }
+        }
+
+        @media (max-width: 1180px) {
+          width: 275px;
+
+          &__titulo {
+            font-size: 1.6rem;
+          }
+        }
+
+        @media (max-width: 1000px) {
+          &__icone {
+            left: 10px;
+          }
+        }
+      }
+
+      .Opcoes {
+        position: absolute;
+        right: 15px;
+
+        &__sacola {
+          cursor: pointer;
+          font-size: 2.5rem;
+          color: var.$color-cart;
+          transition: var.$transtition;
+
+          &:hover {
+            transform: scale(1.2);
+          }
+        }
+      }
+    }
+  }
 
   > h2 {
     display: flex;
     justify-content: center;
     font-size: 2rem;
-    margin: 1rem 0;
-    margin-bottom: 2rem;
+    color: var.$primary-color;
+    font-weight: bold;
+    margin: 2rem 0 1rem 0;
+    transition: var.$transtition;
+
+    &:hover {
+      color: var.$primary-color-hover;
+    }
   }
 
-  //Get By Id ------------------------------------------------------------
+  // ----------------------------------------------- Input --------------------------------------
   .pizza-escolhida {
     @include mixins.display;
     padding: 2rem;
@@ -68,14 +149,17 @@ body {
         border: none;
         border-radius: 0.2rem;
         font-size: 1rem;
+        outline: none;
+        color: var.$color-input;
+        background-color: var.$background-color-input;
       }
 
       #idPizzaBtn {
         background-color: transparent;
-        border: 3px solid #343232;
+        border: 3px solid var.$primary-color;
         padding: 0.5rem;
         outline: none;
-        color: #343232;
+        color: var.$primary-color;
         font-weight: bold;
         border-radius: 0.8rem;
         width: 330px;
@@ -86,14 +170,15 @@ body {
         transition: all 0.6s ease-in-out;
 
         &:hover {
-          background-color: #343232;
-          color: #d3f4eb;
+          background-color: var.$background-color-button;
+          border: 3px solid var.$border-button;
+          color: var.$color-button;
         }
       }
     }
   }
 
-  // Get All ------------------------------------------------------------
+  // ----------------------------------------------- Itens --------------------------------------
   &__container {
     display: flex;
     justify-content: center;
@@ -121,7 +206,7 @@ body {
 
   .pizzaCardItem,
   .PizzaListaItem {
-    background-color: #52f8c3;
+    background-color: var.$background-color-card;
     border-radius: 10px;
     padding: 0.8rem;
     width: 345px;
@@ -134,24 +219,25 @@ body {
     }
 
     > div {
-      display: flex;
-      justify-content: space-between;
-      flex-direction: column;
+      @include mixins.display-div;
     }
 
     &__numero {
       font-size: 1.2rem;
       margin-left: 5px;
+      color: var.$primary-color;
+      font-weight: bold;
     }
 
     &__sabor {
       font-size: 1.5rem;
       font-weight: bold;
       line-height: 100%;
+      color: var.$primary-color;
     }
 
     &__preco {
-      color: #4d754d;
+      color: var.$color-preco;
       text-align: center;
       margin-top: 0.5rem;
       margin-bottom: 0.5rem;
@@ -159,6 +245,7 @@ body {
 
     &__descricao {
       font-size: 0.8rem;
+      color: var.$primary-color;
     }
 
     &__avaliacao {
@@ -167,8 +254,8 @@ body {
     }
 
     &__foto {
-      height: 150px;
-      margin-right: -50px;
+      height: 160px;
+      margin-right: -60px;
       transition: all 0.6s ease-in-out;
 
       &:hover {
