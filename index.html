@@ -5,15 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="shortcut icon" href="./assets/image/favicon.ico" type="image/x-icon">
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css"
     />
-    <title>Don Lorenzzo</title>
+    <title>Pizzeria Don Lorenzzo</title>
   </head>
   <body>
     <section class="Home">
-      <div class="Header">
+      <header class="Header">
         <div class="Header_row">
           <div class="Logo">
             <img
@@ -31,8 +32,8 @@
             </div>
           </div>
         </div>
-      </div>
-
+      </header>
+      
       <!--------------------------------------------------------- Procurar -------------------------------------------------->
       <h2>Procurar Pizza:</h2>
       <div class="pizza-escolhida">
@@ -40,6 +41,8 @@
           <input
             id="idPizza"
             type="text"
+            spellcheck="true"
+            translate="yes"
             placeholder="Digite o numero da pizza que quer encontrar."
           />
           <button id="idPizzaBtn" onclick="findByIdPizza()">Procurar</button>
@@ -52,6 +55,41 @@
       <div class="Home__container">
         <div class="pizzaLista" id="pizzaList"></div>
       </div>
+
+      <section class="btn-modal-create">
+        <button type="button" onclick="openModal()">Acresentar Pizza</button>
+      </section>
+
+      <!--------------------------------------------------------- Modal ----------------------------------------------------->
+      <section class="modal" id="overlay">
+        <div class="modal__card">
+
+          <div class="header">
+            <h2>Adicionar nova pizza</h2>
+            <a onclick="closeModal()"><i class="bi bi-x-circle"></i></a>
+          </div>
+
+          <div class="modal_form">
+            <form action="">
+
+              <input type="text" name="sabor" id="sabor" placeholder="Sabor da Pizza">
+  
+              <input type="text" name="preco" id="preco" placeholder="Valor da Pizza">
+  
+              <input type="text" name="avaliacao" id="avaliacao" placeholder="Avaliações">
+  
+              <input type="text" name="image" id="image" placeholder="Imagem da Pizza">
+
+              <textarea name="descricao" id="descricao" cols="15" rows="5" placeholder="Descricao"></textarea>
+  
+              <button type="submit">Adicionar</button>
+  
+            </form>
+          </div>
+
+        </div>
+      </section>
+
     </section>
 
     <script src="./assets/js/script.js"></script>

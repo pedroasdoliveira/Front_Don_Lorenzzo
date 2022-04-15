@@ -11,7 +11,7 @@
 }
 
 ::-webkit-scrollbar-track {
-  background-color: #d3f4eb;
+  background-color: #eee;
   border-radius: 30px;
 }
 
@@ -30,11 +30,7 @@ body {
 
 .Home {
   position: relative;
-  background-image: radial-gradient(
-    farthest-corner at 40px 40px,
-    #006536 40%,
-    #62ec69de 100%
-  );
+  background-image: radial-gradient(farthest-corner at 40px 40px, #006536 40%, #62ec69de 100%);
   min-height: calc(100vh - 60px);
   padding: 1rem;
   margin: 1rem;
@@ -57,13 +53,13 @@ body {
   display: flex;
   align-items: center;
   border-radius: 15px;
-  background-color: #efce75;
+  background-color: #EFCE75;
   width: 375px;
   height: 50px;
 }
 .Home .Header_row .Logo__icone {
   position: absolute;
-  left: -20px;
+  left: -30px;
   top: -35px;
   transition: all 0.6s ease-in-out;
 }
@@ -106,17 +102,123 @@ body {
 .Home .Header_row .Opcoes__sacola:hover {
   transform: scale(1.2);
 }
+.Home .btn-modal-create {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+.Home .btn-modal-create button {
+  width: 250px;
+  padding: 0.5rem;
+  background-color: transparent;
+  overflow: none;
+  border: 3px solid #1d471d;
+  color: #343232;
+  font-weight: bold;
+  border-radius: 15px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.6s ease-in-out;
+}
+.Home .btn-modal-create button:hover {
+  background-color: #343232;
+  border: 3px solid #cbd7ca;
+  color: #cbd7ca;
+}
+.Home .modal {
+  background-color: #00000060;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  overflow-y: auto;
+}
+.Home .modal__card {
+  margin: 1rem;
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  min-height: 300px;
+  background-color: #eee;
+  opacity: 70%;
+  border-radius: 0.8rem;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+.Home .modal__card .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-image: radial-gradient(farthest-corner at 40px 40px, #006536 30%, #62ec69de 100%);
+  color: #fefddc;
+  padding: 1rem;
+}
+.Home .modal__card .header a {
+  text-decoration: none;
+  color: #fefddc;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: all 0.6s ease-in-out;
+}
+.Home .modal__card .header a:hover {
+  color: #e91f30;
+  transform: scale(1.2);
+}
+.Home .modal__card .modal_form {
+  padding: 0.5rem 1rem;
+}
+.Home .modal__card .modal_form form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.Home .modal__card .modal_form form input, .Home .modal__card .modal_form form textarea {
+  width: 100%;
+  padding: 0.5rem;
+  font-size: 1rem;
+  outline: none;
+  border: 3px solid #343232;
+  margin-bottom: 0.8rem;
+  resize: none;
+  border-radius: 15px;
+}
+.Home .modal__card .modal_form form button {
+  padding: 0.5rem;
+  width: 30%;
+  font-size: 1rem;
+  background-color: transparent;
+  color: #1d471d;
+  border: 3px solid #1d471d;
+  border-radius: 15px;
+  margin-bottom: 0.5rem;
+  cursor: pointer;
+  transition: all 0.6s ease-in-out;
+}
+.Home .modal__card .modal_form form button:hover {
+  background-color: #343232;
+  color: #cbd7ca;
+  border: 3px solid #cbd7ca;
+}
 .Home > h2 {
   display: flex;
   justify-content: center;
   font-size: 2rem;
   color: #343232;
   font-weight: bold;
-  margin: 2rem 0 1rem 0;
+  margin: 3rem 0 1rem 0;
   transition: all 0.6s ease-in-out;
 }
 .Home > h2:hover {
-  color: #fcf8ee;
+  color: #FCF8EE;
 }
 .Home .pizza-escolhida {
   display: flex;
@@ -188,7 +290,7 @@ body {
 }
 .Home .pizzaCardItem,
 .Home .PizzaListaItem {
-  background-color: #efce75;
+  background-color: #EFCE75;
   border-radius: 10px;
   padding: 0.8rem;
   width: 345px;
@@ -197,7 +299,7 @@ body {
 }
 @media (max-width: 400px) {
   .Home .pizzaCardItem,
-  .Home .PizzaListaItem {
+.Home .PizzaListaItem {
     width: 65vw;
     height: auto;
   }
@@ -224,7 +326,7 @@ body {
 }
 .Home .pizzaCardItem__preco,
 .Home .PizzaListaItem__preco {
-  color: #4d754d;
+  color: #295229;
   text-align: center;
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;

@@ -53,3 +53,14 @@ async function findByIdPizza() {
 }
 
 findAllPizzas();
+
+// ------------------------------------------------------- Modal -----------------------------------------------
+function openModal() {
+    const modal = document.querySelector('#overlay');
+    modal.style.display = 'flex';
+}
+
+function closeModal() {
+    const modal = document.querySelector('#overlay');
+    modal.style.display = 'none';
+}
