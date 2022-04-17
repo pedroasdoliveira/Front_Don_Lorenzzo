@@ -65,24 +65,26 @@
         <div class="modal__card">
 
           <div class="header">
-            <h2>Adicionar nova pizza</h2>
+            <h2 id="header-modal">Adicionar nova pizza</h2>
             <a onclick="closeModal()"><i class="bi bi-x-circle"></i></a>
           </div>
 
           <div class="modal_form">
             <form action="">
 
-              <input type="text" name="sabor" id="sabor" placeholder="Sabor da Pizza">
-  
-              <input type="text" name="preco" id="preco" placeholder="Valor da Pizza">
-  
-              <input type="text" name="avaliacao" id="avaliacao" placeholder="Avaliações">
-  
-              <input type="text" name="image" id="image" placeholder="Imagem da Pizza">
+              <input type="hidden" name="id" id="id">
 
-              <textarea name="descricao" id="descricao" cols="15" rows="5" placeholder="Descricao"></textarea>
+              <input type="text" name="sabor" id="sabor" placeholder="Sabor da Pizza" required>
   
-              <button type="submit">Adicionar</button>
+              <input type="number" name="preco" id="preco" placeholder="Valor da Pizza" required>
+  
+              <input type="number" name="avaliacao" id="avaliacao" placeholder="Avaliações" required>
+  
+              <input type="text" name="image" id="image" placeholder="Imagem da Pizza" required>
+
+              <textarea name="descricao" id="descricao" cols="15" rows="5" placeholder="Descricao" required></textarea>
+  
+              <button id="button-modal" type="submit" onclick="addPizza(event)">Adicionar</button>
   
             </form>
           </div>
@@ -90,8 +92,33 @@
         </div>
       </section>
 
+      <section class="modal">
+        <div class="modal__card">
+
+          <div class="header">
+            <h2 id="header-modal">Confirmação de deleção</h2>
+            <a onclick="closeModalDelete()"><i class="bi bi-x-circle"></i></a>
+          </div>
+
+          <div class="modal_delete">
+            <p>Deseja remover a Pizza do catalogo?</p>
+            <div class="btns">
+              <button class="btns_no btn" onclick="closeModalDelete()">Não</button>
+              <button class="btns_yes btn" onclick="deletePizza()">Sim</button>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <div class="message" id="alert">
+        <div class="message__description">
+          <p>Pizza adicionada com sucesso!</p>
+        </div>
+      </div>
+
     </section>
 
-    <script src="./assets/js/script.js"></script>
+    <script src="./assets/js/script.js"></script> 
   </body>
 </html>

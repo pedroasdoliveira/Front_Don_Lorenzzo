@@ -6,6 +6,12 @@
   align-items: center;
 }
 
+@mixin display-base {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 @mixin display-div {
   display: flex;
   justify-content: space-between;
