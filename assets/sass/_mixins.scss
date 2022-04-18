@@ -18,7 +18,7 @@
   flex-direction: column;
 }
 
-@mixin  display-row {
+@mixin display-row {
   display: flex;
   justify-content: space-between;
 }

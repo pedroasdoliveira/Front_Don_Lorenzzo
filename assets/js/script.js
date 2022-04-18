@@ -70,15 +70,14 @@ async function openModal(id = null) {
 
         const response = await fetch(`${baseURL}/pizza/${id}`);
         const pizza = await response.json();
-        
+
         document.querySelector('#id').value = pizza.id;
         document.querySelector('#sabor').value = pizza.sabor;
         document.querySelector('#preco').value = pizza.preco;
         document.querySelector('#descricao').value = pizza.descricao;
         document.querySelector('#avaliacao').value = pizza.avaliacao;
         document.querySelector('#image').value = pizza.image;
-    }
-    else {
+    } else {
         document.querySelector('#header-modal').innerText = 'Adicionar nova pizza';
         document.querySelector('#button-modal').innerText = 'Adicionar';
     }
@@ -105,9 +104,9 @@ let timer;
 function openMessage() {
     const alert = document.querySelector('#alert');
     alert.style.display = 'flex';
-    
+
     seconds = 0;
-    timer = setInterval(function() {
+    timer = setInterval(function () {
         seconds++;
 
         if (seconds == 5) {
@@ -177,8 +176,7 @@ async function addPizza(event) {
 
     if (modo) {
         document.querySelector(`#PizzaListaItem_${id}`).outerHTML = html
-    }
-    else {
+    } else {
         document.querySelector('#pizzaList').insertAdjacentHTML('beforeend', html);
         openMessage();
     }
@@ -192,7 +190,7 @@ function openModalDelete(id) {
 
     const btnDelete = document.querySelector('.btns_yes');
 
-    btnDelete.addEventListener('click', function() {
+    btnDelete.addEventListener('click', function () {
         deletePizza(id);
     })
 }

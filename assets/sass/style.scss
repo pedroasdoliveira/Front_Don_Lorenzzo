@@ -248,7 +248,8 @@ body {
           margin-top: 1rem;
         }
 
-        .btns { // ------------------------------------------ btns modal delete
+        .btns {
+          // ------------------------------------------ btns modal delete
           @include mixins.display-base;
           gap: 2rem;
           margin-top: 2rem;
