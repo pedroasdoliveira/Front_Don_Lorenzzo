@@ -217,8 +217,51 @@ body {
   color: #cbd7ca;
   border: 3px solid #cbd7ca;
 }
-.Home .message,
-.Home #alert {
+.Home .modal__card .modal_form p,
+.Home .modal__card .modal_delete p {
+  text-align: center;
+  color: #343232;
+  font-size: 1.5rem;
+  margin-top: 1rem;
+}
+.Home .modal__card .modal_form .btns,
+.Home .modal__card .modal_delete .btns {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+.Home .modal__card .modal_form .btns .btn,
+.Home .modal__card .modal_delete .btns .btn {
+  padding: 0.5rem;
+  width: 20%;
+  font-size: 1rem;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: all 0.6s ease-in-out;
+}
+.Home .modal__card .modal_form .btns_no,
+.Home .modal__card .modal_delete .btns_no {
+  background-color: #e91f30;
+  border: 3px solid #e91f30;
+  color: #fefddc;
+}
+.Home .modal__card .modal_form .btns_no:hover,
+.Home .modal__card .modal_delete .btns_no:hover {
+  transform: scale(1.2);
+}
+.Home .modal__card .modal_form .btns_yes,
+.Home .modal__card .modal_delete .btns_yes {
+  background-color: #006536;
+  border: 3px solid #006536;
+  color: #fefddc;
+}
+.Home .modal__card .modal_form .btns_yes:hover,
+.Home .modal__card .modal_delete .btns_yes:hover {
+  transform: scale(1.2);
+}
+.Home .message {
   display: none;
   position: fixed;
   top: 20px;
@@ -229,8 +272,7 @@ body {
   border-radius: 15px;
   cursor: pointer;
 }
-.Home .message__description,
-.Home #alert__description {
+.Home .message__description {
   color: #343232;
   font-weight: bold;
   font-size: 1.1rem;

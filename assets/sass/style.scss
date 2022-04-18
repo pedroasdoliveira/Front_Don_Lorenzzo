@@ -240,12 +240,54 @@ body {
             }
           }
         }
+
+        p {
+          text-align: center;
+          color: var.$primary-color;
+          font-size: 1.5rem;
+          margin-top: 1rem;
+        }
+
+        .btns { // ------------------------------------------ btns modal delete
+          @include mixins.display-base;
+          gap: 2rem;
+          margin-top: 2rem;
+
+          .btn {
+            padding: var.$padding-button;
+            width: 20%;
+            font-size: 1rem;
+            border-radius: 15px;
+            cursor: pointer;
+            transition: var.$transtition;
+          }
+
+          &_no {
+            background-color: #e91f30;
+            border: 3px solid #e91f30;
+            color: var.$second-color;
+
+            &:hover {
+              transform: scale(1.2);
+            }
+          }
+
+          &_yes {
+            background-color: #006536;
+            border: 3px solid #006536;
+            color: var.$second-color;
+
+            &:hover {
+              transform: scale(1.2);
+            }
+          }
+        }
       }
     }
   }
 
-  .message,
-  #alert {
+  // -------------------------------------------- Alert -----------------------------------------------------
+  .message {
     display: none;
     position: fixed;
     top: 20px;

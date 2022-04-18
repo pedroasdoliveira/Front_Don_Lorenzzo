@@ -84,7 +84,7 @@
 
               <textarea name="descricao" id="descricao" cols="15" rows="5" placeholder="Descricao" required></textarea>
   
-              <button id="button-modal" type="submit" onclick="addPizza(event)">Adicionar</button>
+              <button class="create" id="button-modal" type="submit" onclick="addPizza(event)">Adicionar</button>
   
             </form>
           </div>
@@ -92,7 +92,8 @@
         </div>
       </section>
 
-      <section class="modal">
+      <!--------------------------------------------------------- Modal Delete -------------------------------------------->
+      <section class="modal" id="overlay-delete">
         <div class="modal__card">
 
           <div class="header">
@@ -103,16 +104,17 @@
           <div class="modal_delete">
             <p>Deseja remover a Pizza do catalogo?</p>
             <div class="btns">
+              <button class="btns_yes btn">Sim</button>
               <button class="btns_no btn" onclick="closeModalDelete()">Não</button>
-              <button class="btns_yes btn" onclick="deletePizza()">Sim</button>
             </div>
           </div>
 
         </div>
       </section>
 
+      <!------------------------------------------------------- Alert -------------------------------------------------->
       <div class="message" id="alert">
-        <div class="message__description">
+        <div class="message__description" id="alert__description">
           <p>Pizza adicionada com sucesso!</p>
         </div>
       </div>

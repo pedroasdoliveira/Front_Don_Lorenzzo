@@ -18,7 +18,7 @@ async function findAllPizzas() {
             <div class="PizzaListaItem__avaliacao">${pizza.avaliacao}⭐</div>
                 <div class="PizzaListaItem__btns">
                     <button class="edit btn" onclick="openModal(${pizza.id})">Editar</button>
-                    <button class="delete btn">Apagar</button>
+                    <button class="delete btn" onclick="openModalDelete(${pizza.id})">Apagar</button>
                 </div>
             </div>
             <img class="PizzaListaItem__foto" src="${pizza.image}" width="50%" alt="Pizza de ${pizza.sabor}"/>
@@ -53,7 +53,7 @@ async function findByIdPizza() {
         </div>
         <div class="PizzaListaItem__btns">
             <button class="edit btn" onclick="openModal(${pizza.id})">Editar</button>
-            <button class="delete btn">Apagar</button>
+            <button class="delete btn" onclick="openModalDelete(${pizza.id})">Apagar</button>
         </div>
         <img class="pizzaCardItem__foto" src="${pizza.image}" width="50%" alt="Pizza de ${pizza.sabor}"/>
     </div>
@@ -96,18 +96,28 @@ function closeModal() {
     document.querySelector('#descricao').value = '';
     document.querySelector('#avaliacao').value = 0;
     document.querySelector('#image').value = '';
-
 }
 
-// ---------------------------------------------- Alert -----------------------------------------
+// ---------------------------------------------- Alert -----------------------------------------------------
+let seconds;
+let timer;
+
 function openMessage() {
     const alert = document.querySelector('#alert');
     alert.style.display = 'flex';
+    
+    seconds = 0;
+    timer = setInterval(function() {
+        seconds++;
 
-    setTimeout(closeMessage(), 5000);
+        if (seconds == 5) {
+            closeMessage();
+        }
+    }, 1000);
 }
 
 function closeMessage() {
+    clearInterval(timer);
     const alert = document.querySelector('#alert');
     alert.style.display = 'none';
 }
@@ -158,7 +168,7 @@ async function addPizza(event) {
             <div class="PizzaListaItem__avaliacao">${newPizza.avaliacao}⭐</div>
             <div class="PizzaListaItem__btns">
                 <button class="edit btn" onclick="openModal(${pizza.id})">Editar</button>
-                <button class="delete btn">Apagar</button>
+                <button class="delete btn" onclick="openModalDelete(${pizza.id})">Apagar</button>
             </div>
         </div>
         <img class="PizzaListaItem__foto" src="${newPizza.image}" width="50%" alt="Pizza de ${newPizza.sabor}"/>
@@ -170,16 +180,41 @@ async function addPizza(event) {
     }
     else {
         document.querySelector('#pizzaList').insertAdjacentHTML('beforeend', html);
+        openMessage();
     }
 
     closeModal();
 };
 
 // ---------------------------------------------- Modal delete -----------------------------------
-function openModalDelete() {
-    
+function openModalDelete(id) {
+    document.querySelector('#overlay-delete').style.display = 'flex';
+
+    const btnDelete = document.querySelector('.btns_yes');
+
+    btnDelete.addEventListener('click', function() {
+        deletePizza(id);
+    })
 }
 
 function closeModalDelete() {
+    document.querySelector('#overlay-delete').style.display = 'none';
+}
 
+async function deletePizza(id) {
+    const response = await fetch(`${baseURL}/delete/${id}`, {
+        method: 'delete',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        mode: 'cors',
+    });
+
+    const result = await response.json();
+    alert(result.message);
+
+    document.querySelector('#pizzaList').innerHTML = '';
+
+    closeModalDelete();
+    findAllPizzas();
 }
