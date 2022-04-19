@@ -307,6 +307,25 @@ body {
     }
   }
 
+  .remove {
+    display: none;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: var.$color-icone;
+    width: 375px;
+    padding: 1rem;
+    border-radius: 15px;
+    cursor: pointer;
+
+    &__description {
+      color: var.$primary-color;
+      font-weight: bold;
+      font-size: 1.1rem;
+      margin: 0 auto;
+    }
+  }
+
   // ------------------------------------------------- H2 ---------------------------------------------
   > h2 {
     @include mixins.display-base;

@@ -121,6 +121,26 @@ function closeMessage() {
     alert.style.display = 'none';
 }
 
+function openAlertDelete() {
+    const alert = document.querySelector('.remove');
+    alert.style.display = 'flex';
+
+    seconds = 0;
+    timer = setInterval(function() {
+        seconds++;
+
+        if (seconds == 5) {
+            closeAlertDelete();
+        }
+    }, 1000);
+}
+
+function closeAlertDelete() {
+    clearInterval(timer);
+    const alert = document.querySelector('.remove');
+    alert.style.display = 'none';
+}
+
 // ----------------------------------------- Modal create and update ------------------------------
 async function addPizza(event) {
     event.preventDefault();
@@ -174,9 +194,9 @@ async function addPizza(event) {
     </div>
     `;
 
-    if (modo) {
+    if (modo) { // updated
         document.querySelector(`#PizzaListaItem_${id}`).outerHTML = html
-    } else {
+    } else { // create
         document.querySelector('#pizzaList').insertAdjacentHTML('beforeend', html);
         openMessage();
     }
@@ -209,10 +229,10 @@ async function deletePizza(id) {
     });
 
     const result = await response.json();
-    alert(result.message);
 
     document.querySelector('#pizzaList').innerHTML = '';
 
+    openAlertDelete();
     closeModalDelete();
     findAllPizzas();
 }
